@@ -6,13 +6,23 @@ import net.minecraftforge.fml.common.Mod;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-@Mod(TeleportItems.MOD_ID)
+@Mod(TeleportItems.MODID)
 public class TeleportItems {
-    public static final String MOD_ID = "teleportitems";
-    private static final Logger LOGGER = LogManager.getLogger();
+    public static final String MODID = "teleportitems";
+    private static TeleportItems INSTANCE;
+    private final Logger logger = LogManager.getLogger();
 
     public TeleportItems() {
+        INSTANCE = this;
         Registration.register();
         MinecraftForge.EVENT_BUS.register(this);
+    }
+
+    public static TeleportItems getInstance() {
+        return INSTANCE;
+    }
+
+    public Logger getLogger() {
+        return logger;
     }
 }

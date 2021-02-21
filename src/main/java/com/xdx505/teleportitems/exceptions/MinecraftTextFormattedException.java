@@ -2,7 +2,7 @@ package com.xdx505.teleportitems.exceptions;
 
 import net.minecraft.util.text.ITextComponent;
 
-public class MinecraftTextFormattedException {
+public class MinecraftTextFormattedException extends Throwable {
     private final ITextComponent reason;
 
     public MinecraftTextFormattedException(ITextComponent reason) {
