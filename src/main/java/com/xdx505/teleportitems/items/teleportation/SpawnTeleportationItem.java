@@ -42,6 +42,5 @@ public class SpawnTeleportationItem extends BaseTeleportationItem {
     @Override
     public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn) {
         return super.onItemRightClick(worldIn, playerIn, handIn);
-
     }
 }
