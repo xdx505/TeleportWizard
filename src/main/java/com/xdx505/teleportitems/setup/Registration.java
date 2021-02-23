@@ -9,12 +9,22 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
 public class Registration {
-    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, TeleportItems.MODID);
+    private static Registration INSTANCE;
+    public static DeferredRegister<Item> ITEMS;
 
-    public static void register() {
-        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+    private Registration() {
+        ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, TeleportItems.MODID);
+
+        final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         ITEMS.register(modEventBus);
 
-        ModItems.register();
+        final ModItems modItems = ModItems.getInstance();
+    }
+
+    public static Registration getInstance() {
+        if (INSTANCE == null) {
+            return new Registration();
+        }
+        return INSTANCE;
     }
 }

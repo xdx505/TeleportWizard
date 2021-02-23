@@ -7,10 +7,17 @@ import net.minecraft.item.ItemGroup;
 import net.minecraftforge.fml.RegistryObject;
 
 public class ModItems {
-    public static final RegistryObject<Item> SPAWN_TELEPORTATION_ITEM = Registration.ITEMS.register("teleportitems_spawn", () ->
-            new SpawnTeleportationItem(new Item.Properties().group(ItemGroup.COMBAT)));
+    private static ModItems INSTANCE;
 
-    public static void register() {
+    private ModItems() {
+        final RegistryObject<Item> SPAWN_TELEPORTATION_ITEM = Registration.ITEMS.register("teleportitems_spawn", () ->
+                new SpawnTeleportationItem(new Item.Properties().group(ItemGroup.COMBAT)));
+    }
 
+    public static ModItems getInstance() {
+        if (INSTANCE == null) {
+            return new ModItems();
+        }
+        return INSTANCE;
     }
 }
