@@ -14,12 +14,12 @@ public class WorldBlockHelper {
     }
 
     public static DimensionBlockPos findEmptySpaceByY(World worldIn, DimensionBlockPos srcPos) {
-        DimensionType dimensionType = srcPos.getDimensionType();
+        final DimensionType dimensionType = srcPos.getDimensionType();
         int x = srcPos.getX();
         int z = srcPos.getZ();
 
         for (int i = srcPos.getY(); i < 256; i++) {
-            DimensionBlockPos dimensionBlockPos = new DimensionBlockPos(dimensionType, x, i, z);
+            final DimensionBlockPos dimensionBlockPos = new DimensionBlockPos(dimensionType, x, i, z);
             if (isPlayerCapaciousBlock(worldIn, dimensionBlockPos)) return dimensionBlockPos;
         }
 
