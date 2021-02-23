@@ -2,11 +2,13 @@ package com.xdx505.teleportitems.items.teleportation;
 
 import com.xdx505.teleportitems.exceptions.MinecraftTextFormattedException;
 import com.xdx505.teleportitems.utils.DimensionBlockPos;
+import com.xdx505.teleportitems.utils.WorldBlockHelper;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.*;
 import net.minecraft.world.World;
+import net.minecraftforge.server.command.TextComponentHelper;
 
 import javax.annotation.Nonnull;
 import java.util.UUID;
@@ -23,13 +25,6 @@ public abstract class BaseTeleportationItem extends Item {
     public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn) {
         ItemStack stack = playerIn.getHeldItem(handIn);
 
-        final SoundEvent eventGlass = new SoundEvent(new ResourceLocation("entity.splash_potion.break"));
-        if (eventGlass != null) {
-            worldIn.playSound(null, playerIn.getPosX(), playerIn.getPosY(), playerIn.getPosZ(), eventGlass, SoundCategory.BLOCKS, 1.0f, 1.0f);
-        }
-
-        stack.shrink(1);
-
         final DimensionBlockPos portalPoint;
         try {
             portalPoint = getPortalPoint(playerIn);
@@ -38,9 +33,21 @@ public abstract class BaseTeleportationItem extends Item {
             return new ActionResult<>(ActionResultType.FAIL, stack);
         }
 
+        if(!WorldBlockHelper.isPlayerCapaciousBlock(worldIn,portalPoint)) {
+            playerIn.sendStatusMessage(TextComponentHelper.createComponentTranslation(playerIn, "teleportitems.teleporting_noemptyspace"),true);
+            return new ActionResult<>(ActionResultType.FAIL, stack);
+        }
+
+        stack.shrink(1);
+
+        final SoundEvent eventGlass = SoundEvents.ENTITY_SPLASH_POTION_BREAK;
+        if (eventGlass != null) {
+            worldIn.playSound(null, playerIn.getPosX(), playerIn.getPosY(), playerIn.getPosZ(), eventGlass, SoundCategory.BLOCKS, 1.0f, 1.0f);
+        }
+
         teleport(worldIn, playerIn, portalPoint);
 
-        final SoundEvent eventEnder = new SoundEvent(new ResourceLocation("entity.enderman.teleport"));
+        final SoundEvent eventEnder = SoundEvents.ENTITY_ENDERMAN_TELEPORT;
         if (eventEnder != null) {
             worldIn.playSound(null, playerIn.getPosX(), playerIn.getPosY(), playerIn.getPosZ(), eventEnder, SoundCategory.BLOCKS, 1.0f, 1.0f);
         }

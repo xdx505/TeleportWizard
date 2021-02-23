@@ -14,6 +14,7 @@ public class WorldBlockHelper {
     }
 
     public static DimensionBlockPos findEmptySpaceByY(World worldIn, DimensionBlockPos srcPos) {
+        worldIn.getHeight();
         final DimensionType dimensionType = srcPos.getDimensionType();
         int x = srcPos.getX();
         int z = srcPos.getZ();

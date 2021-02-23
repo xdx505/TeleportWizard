@@ -33,7 +33,7 @@ public class SpawnTeleportationItem extends BaseTeleportationItem {
     public DimensionBlockPos getPortalPoint(PlayerEntity player) throws MinecraftTextFormattedException {
         DimensionType dimension = player.world.getDimensionType();
         int spawnX = player.world.getWorldInfo().getSpawnX();
-        int spawnY = player.world.getWorldInfo().getSpawnY();
+        int spawnY = player.world.getWorldInfo().getSpawnY() + 1;
         int spawnZ = player.world.getWorldInfo().getSpawnZ();
 
         return new DimensionBlockPos(dimension, spawnX, spawnY, spawnZ);
