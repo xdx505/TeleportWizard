@@ -1,6 +1,7 @@
 package com.xdx505.teleportitems.setup;
 
 import com.xdx505.teleportitems.TeleportItems;
+import com.xdx505.teleportitems.handlers.TickHandler;
 import com.xdx505.teleportitems.items.ModItems;
 import net.minecraft.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -15,7 +16,7 @@ public class Registration {
     private Registration() {
         ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, TeleportItems.MODID);
 
-        final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         ITEMS.register(modEventBus);
 
         final ModItems modItems = ModItems.getInstance();
