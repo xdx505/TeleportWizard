@@ -6,8 +6,8 @@ import net.minecraft.world.DimensionType;
 public class DimensionBlockPos extends BlockPos {
     private final DimensionType dimensionType;
 
-    public DimensionBlockPos(DimensionType dimensionType, int X, int Y, int Z) {
-        super(X, Y, Z);
+    public DimensionBlockPos(DimensionType dimensionType, int x, int y, int z) {
+        super(x, y, z);
         this.dimensionType = dimensionType;
     }
 
