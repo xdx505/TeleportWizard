@@ -14,7 +14,7 @@ public class TeleportItems {
 
     public TeleportItems() {
         INSTANCE = this;
-        Registration.register();
+        Registration.getInstance();
         MinecraftForge.EVENT_BUS.register(this);
     }
 
