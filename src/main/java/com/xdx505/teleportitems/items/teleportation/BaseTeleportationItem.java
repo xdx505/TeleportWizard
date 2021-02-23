@@ -37,7 +37,7 @@ public abstract class BaseTeleportationItem extends Item {
             playerIn.sendMessage(e.getReason(), UUID.randomUUID());
             return new ActionResult<>(ActionResultType.FAIL, stack);
         }
-        teleport(playerIn, portalPoint);
+        teleport(worldIn, playerIn, portalPoint);
 
         return new ActionResult<>(ActionResultType.SUCCESS, stack);
     }
