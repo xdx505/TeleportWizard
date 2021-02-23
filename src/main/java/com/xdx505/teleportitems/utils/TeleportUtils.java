@@ -1,21 +1,24 @@
 package com.xdx505.teleportitems.utils;
 
+import com.xdx505.teleportitems.items.teleportation.TeleportDelayThread;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import net.minecraft.world.server.ServerWorld;
 
 public class TeleportUtils {
 
-    public static void teleport(World worldIn, PlayerEntity playerIn, DimensionBlockPos pos) {
+    public static void teleport(World worldIn, PlayerEntity playerIn, ItemStack stack, DimensionBlockPos pos) {
         if (!playerIn.getEntityWorld().getDimensionType().equals(pos.getDimensionType())) {
             //TODO change dimension type
-            playerIn.changeDimension((ServerWorld) worldIn);
-
         }
 
-        playerIn.teleportKeepLoaded(pos.getX(), pos.getY(), pos.getZ());
-        /*final DimensionBlockPos emptyPosition = WorldBlockHelper.findEmptySpaceByY(worldIn, pos);
-        if (emptyPosition != null) {
-        } else playerIn.sendMessage(TextComponentHelper.createComponentTranslation(playerIn, "teleportitems.teleporting_noemptyspace"),UUID.randomUUID());*/
+        //TODO if instant teleport
+
+        new TeleportDelayThread(playerIn, new Runnable() {
+            @Override
+            public void run() {
+                playerIn.teleportKeepLoaded(pos.getX(), pos.getY(), pos.getZ());
+            }
+        }).start();
     }
 }
