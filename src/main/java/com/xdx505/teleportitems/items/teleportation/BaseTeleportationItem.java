@@ -11,7 +11,6 @@ import net.minecraft.world.World;
 import net.minecraftforge.server.command.TextComponentHelper;
 
 import javax.annotation.Nonnull;
-import java.util.UUID;
 
 import static com.xdx505.teleportitems.utils.TeleportUtils.teleport;
 
@@ -29,12 +28,12 @@ public abstract class BaseTeleportationItem extends Item {
         try {
             portalPoint = getPortalPoint(playerIn);
         } catch (MinecraftTextFormattedException e) {
-            playerIn.sendMessage(e.getReason(), UUID.randomUUID());
+            playerIn.sendMessage(e.getReason(), Util.DUMMY_UUID);
             return new ActionResult<>(ActionResultType.FAIL, stack);
         }
 
-        if(!WorldBlockHelper.isPlayerCapaciousBlock(worldIn,portalPoint)) {
-            playerIn.sendStatusMessage(TextComponentHelper.createComponentTranslation(playerIn, "teleportitems.teleporting_noemptyspace"),true);
+        if (!WorldBlockHelper.isPlayerCapaciousBlock(worldIn, portalPoint)) {
+            playerIn.sendStatusMessage(TextComponentHelper.createComponentTranslation(playerIn, "teleportitems.teleporting_noemptyspace"), true);
             return new ActionResult<>(ActionResultType.FAIL, stack);
         }
 
@@ -45,7 +44,7 @@ public abstract class BaseTeleportationItem extends Item {
             worldIn.playSound(null, playerIn.getPosX(), playerIn.getPosY(), playerIn.getPosZ(), eventGlass, SoundCategory.BLOCKS, 1.0f, 1.0f);
         }
 
-        teleport(worldIn, playerIn, portalPoint);
+        teleport(worldIn, playerIn, stack, portalPoint);
 
         final SoundEvent eventEnder = SoundEvents.ENTITY_ENDERMAN_TELEPORT;
         if (eventEnder != null) {
