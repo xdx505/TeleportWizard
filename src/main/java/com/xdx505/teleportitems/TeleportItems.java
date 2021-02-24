@@ -12,7 +12,7 @@ import org.apache.logging.log4j.Logger;
 
 /**
  * Main class of Teleport Items mod
- * @author xdx505, LionZXY
+ * @author xdx505
  * @version 1.0
  */
 @Mod(TeleportItems.MODID)

@@ -10,6 +10,10 @@ import net.minecraftforge.server.command.TextComponentHelper;
 
 import java.util.concurrent.TimeUnit;
 
+/**
+ * <p>This thread set delay before teleporting. Delay time can be configured in config.</p>
+ * If player doesn't take damage and doesn't move during the delay, he will teleport.
+ */
 public class TeleportDelayThread extends Thread {
     final private Runnable onTeleport;
     final private int delaySec = TeleportItemsConfig.getTeleportDelay().get();
@@ -17,6 +21,11 @@ public class TeleportDelayThread extends Thread {
     final private BlockPos initPos;
     final private float initHp;
 
+    /**
+     * Constructor.
+     * @param entityPlayer player's entity.
+     * @param onTeleport teleport thread.
+     */
     public TeleportDelayThread(PlayerEntity entityPlayer, Runnable onTeleport) {
         this.onTeleport = onTeleport;
         this.entityPlayer = entityPlayer;
@@ -24,6 +33,9 @@ public class TeleportDelayThread extends Thread {
         this.initHp = entityPlayer.getHealth();
     }
 
+    /**
+     * If player doesn't take damage and doesn't move during the delay, he will teleport.
+     */
     @Override
     public void run() {
         super.run();
