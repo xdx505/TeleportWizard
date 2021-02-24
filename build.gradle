@@ -14,8 +14,8 @@ apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
 version = '1.0'
-group = 'com.xdx505.teleportwizard' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = 'teleportwizard'
+group = 'com.xdx505.teleportitems' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = 'teleportitems'
 
 sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
 
@@ -138,7 +138,7 @@ dependencies {
 jar {
     manifest {
         attributes([
-            "Specification-Title": "teleportwizard",
+            "Specification-Title": "teleportitems",
             "Specification-Vendor": "xdx505",
             "Specification-Version": "1", // We are version 1 of ourselves
             "Implementation-Title": project.name,

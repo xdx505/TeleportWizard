@@ -1,0 +1,43 @@
+{
+  "item.teleportitems.teleportitems_random": "Red Ender Teleporter",
+  "item.teleportitems.teleportitems_back": "Green Ender Teleporter",
+  "item.teleportitems.teleportitems_home": "Orange Ender Teleporter",
+  "item.teleportitems.teleportitems_spawn": "Blue Ender Teleporter",
+  "item.teleportitems.instant_prefix": "§5Instant",
+  "block.teleportitems.teleportitems_homeset": "Restoration Beacon",
+
+  "item.teleportitems.teleportitems_random.description": "Teleports player to a random location",
+  "item.teleportitems.teleportitems_back.description": "Teleports player to the last death spot",
+  "item.teleportitems.teleportitems_home.description": "Teleports player to Restoration Beacon",
+  "item.teleportitems.teleportitems_spawn.description": "Teleports player to World Center Beacon",
+  "item.teleportitems.teleportitems_homeset.description": "Allows player to teleport by using Orange Ender Teleporter",
+
+  "item.teleportitems.teleportitems_craft_pearl_dust": "Pearl Dust",
+  "item.teleportitems.teleportitems_craft_peridot_dust": "Peridot Dust",
+  "item.teleportitems.teleportitems_craft_home_core": "Home Core",
+  "item.teleportitems.teleportitems_craft_back_dust": "Back Dust",
+  "item.teleportitems.teleportitems_craft_topaz_dust": "Topaz Dust",
+  "item.teleportitems.teleportitems_craft_spawn_core": "Spawn Core",
+  "item.teleportitems.teleportitems_craft_random_core": "Random Core",
+  "item.teleportitems.teleportitems_craft_ruby_dust": "Ruby Dust",
+  "item.teleportitems.teleportitems_craft_home_dust": "Home Dust",
+  "item.teleportitems.teleportitems_craft_back_core": "Back Core",
+  "item.teleportitems.teleportitems_craft_sapphire_dust": "Sapphire Dust",
+  "item.teleportitems.teleportitems_craft_detail_half": "Detail Half",
+  "item.teleportitems.teleportitems_craft_spawn_dust": "Spawn Dust",
+  "item.teleportitems.teleportitems_craft_random_dust": "Random Dust",
+
+  "teleportitems.delay_teleport_text": "Waiting for warp to start. %d seconds remaining! Don’t move!",
+  "teleportitems.moving_teleport_text": "Warp denied due to moving or getting damaged",
+  "teleportitems.teleporting_text": "Warping…",
+  "teleportitems.teleporting_noemptyspace": "No empty block to move",
+  "teleportitems.notback_text": "Can’t find your last death spot",
+  "teleportitems.nothome_text": "Can’t find your restoration beacon",
+  "teleportitems.homeset_done_text": "Restoration Beacon activated",
+  "teleportitems.homeset_already_text": "Restoration Beacon is already activated. You can deactivate it by rightclick with empty arm",
+  "teleportitems.homeset_clear_text": "Restoration Beacon deactivated",
+  "teleportitems.homeset_allow_error_text": "Denied Permission!",
+  "teleportitems.homeset_needitem_text": "Activation requires one Orange Ender Teleporter",
+
+  "teleportitems.homeset_text": "Restoration Beacon activated at [%s,%s,%s]"
+}

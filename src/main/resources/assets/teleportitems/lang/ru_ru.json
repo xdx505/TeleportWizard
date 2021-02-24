@@ -1,0 +1,43 @@
+{
+  "item.teleportitems.teleportitems_random": "Красный телепортатор Края",
+  "item.teleportitems.teleportitems_back": "Зеленый телепортатор Края",
+  "item.teleportitems.teleportitems_home": "Оранжевый телепортатор Края",
+  "item.teleportitems.teleportitems_spawn": "Синий телепортатор Края",
+  "item.teleportitems.instant_prefix": "§5Мгновенный",
+  "block.teleportitems.teleportitems_homeset": "Маяк восстановления",
+
+  "item.teleportitems.teleportitems_random.description": "Телепортирует игрока в случайное место на карте",
+  "item.teleportitems.teleportitems_back.description": "Телепортирует игрока на место последней смерти",
+  "item.teleportitems.teleportitems_home.description": "Телепортирует игрока к Маяку Восстановления",
+  "item.teleportitems.teleportitems_spawn.description": "Телепортирует игрока к Маяку Центра Мира",
+  "item.teleportitems.teleportitems_homeset.description": "Позволяет пользователю телепортироваться при помощи оражевого телепортатора Края",
+
+  "item.teleportitems.teleportitems_craft_pearl_dust": "Пыль жемчуга Края",
+  "item.teleportitems.teleportitems_craft_peridot_dust": "Хризалитовая пыль",
+  "item.teleportitems.teleportitems_craft_home_core": "Оранжевое ядро телепортатора",
+  "item.teleportitems.teleportitems_craft_back_dust": "Заряженная хризалитовая пыль",
+  "item.teleportitems.teleportitems_craft_topaz_dust": "Топазовая пыль",
+  "item.teleportitems.teleportitems_craft_spawn_core": "Синее ядро телепортатора",
+  "item.teleportitems.teleportitems_craft_random_core": "Красное ядро телепортатора",
+  "item.teleportitems.teleportitems_craft_ruby_dust": "Рубиновая пыль",
+  "item.teleportitems.teleportitems_craft_home_dust": "Заряженная топазовая пыль",
+  "item.teleportitems.teleportitems_craft_back_core": "Зеленое ядро телепортатора",
+  "item.teleportitems.teleportitems_craft_sapphire_dust": "Сапфировая пыль",
+  "item.teleportitems.teleportitems_craft_detail_half": "Половина корпуса телепортатора",
+  "item.teleportitems.teleportitems_craft_spawn_dust": "Заряженная сапфировая пыль",
+  "item.teleportitems.teleportitems_craft_random_dust": "Заряженная рубиновая пыль",
+
+  "teleportitems.delay_teleport_text": "Ожидание начала телепортации. Осталось %d секунд! Не двигайтесь!",
+  "teleportitems.moving_teleport_text": "Телепортация отменена из-за передвижения или получения урона",
+  "teleportitems.teleporting_text": "Телепортация…",
+  "teleportitems.teleporting_noemptyspace": "Нет свободного блока для перемещения",
+  "teleportitems.notback_text": "Не удается установить местоположение вашей последней смерти",
+  "teleportitems.nothome_text": "Не удается установить связь с Маяком Восстановления",
+  "teleportitems.homeset_done_text": "Маяк восстановления успешно активирован",
+  "teleportitems.homeset_already_text": "Маяк восстановления уже активирован. Вы можете деактивировать его, нажав на него правой кнопкой мыши с пустой рукой",
+  "teleportitems.homeset_clear_text": "Маяк восстановления деактивирован",
+  "teleportitems.homeset_allow_error_text": "У вас нет прав для изменения этого блока. Вы точно его владелец?",
+  "teleportitems.homeset_needitem_text": "Для активации нужен оранжевый телепортатор Края",
+
+  "teleportitems.homeset_text": "Маяк восстановления активирован на [%s,%s,%s]"
+}
