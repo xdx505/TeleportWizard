@@ -1,9 +1,12 @@
-package com.xdx505.teleportitems.utils;
+package com.xdx505.teleportitems.common;
 
-import com.xdx505.teleportitems.common.models.DimensionBlockPos;
 import com.xdx505.teleportitems.common.TeleportDelayThread;
+import com.xdx505.teleportitems.common.models.DimensionBlockPos;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.SoundCategory;
+import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.world.World;
 
 public class TeleportUtils {
@@ -15,12 +18,7 @@ public class TeleportUtils {
 
         //TODO if instant teleport
 
-        new TeleportDelayThread(playerIn, new Runnable() {
-            @Override
-            public void run() {
-                playerIn.teleportKeepLoaded(pos.getX(), pos.getY(), pos.getZ());
-                
-            }
-        }).start();
+        new TeleportDelayThread(playerIn, new TeleportRunner(playerIn, pos, worldIn)).start();
+
     }
 }
