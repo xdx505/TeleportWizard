@@ -1,6 +1,7 @@
 package com.xdx505.teleportitems.utils;
 
-import com.xdx505.teleportitems.items.teleportation.TeleportDelayThread;
+import com.xdx505.teleportitems.common.models.DimensionBlockPos;
+import com.xdx505.teleportitems.common.TeleportDelayThread;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
@@ -18,6 +19,7 @@ public class TeleportUtils {
             @Override
             public void run() {
                 playerIn.teleportKeepLoaded(pos.getX(), pos.getY(), pos.getZ());
+                
             }
         }).start();
     }

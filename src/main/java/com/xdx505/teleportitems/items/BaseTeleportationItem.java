@@ -1,7 +1,7 @@
 package com.xdx505.teleportitems.items.teleportation;
 
 import com.xdx505.teleportitems.exceptions.MinecraftTextFormattedException;
-import com.xdx505.teleportitems.utils.DimensionBlockPos;
+import com.xdx505.teleportitems.common.models.DimensionBlockPos;
 import com.xdx505.teleportitems.utils.WorldBlockHelper;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
@@ -22,7 +22,11 @@ public abstract class BaseTeleportationItem extends Item {
 
     @Override
     public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn) {
-        ItemStack stack = playerIn.getHeldItem(handIn);
+        if (worldIn.isRemote()) {
+            return super.onItemRightClick(worldIn, playerIn, handIn);
+        }
+
+        final ItemStack stack = playerIn.getHeldItem(handIn);
 
         final DimensionBlockPos portalPoint;
         try {

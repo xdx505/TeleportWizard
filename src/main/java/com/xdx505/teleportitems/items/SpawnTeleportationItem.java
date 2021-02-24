@@ -1,16 +1,14 @@
 package com.xdx505.teleportitems.items.teleportation;
 
 import com.xdx505.teleportitems.exceptions.MinecraftTextFormattedException;
-import com.xdx505.teleportitems.utils.DimensionBlockPos;
+import com.xdx505.teleportitems.common.models.DimensionBlockPos;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
-import net.minecraft.world.Dimension;
 import net.minecraft.world.DimensionType;
 import net.minecraft.world.World;
 
