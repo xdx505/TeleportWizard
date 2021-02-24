@@ -14,12 +14,30 @@ import javax.annotation.Nonnull;
 
 import static com.xdx505.teleportitems.common.TeleportUtils.teleport;
 
+/**
+ *  * <p>Abstract teleportation item's class</p>
+ *  * <p>Item can teleport player to target point from another dimensions</p>
+ * <p>This is an abstract class which describes base teleportation item and general rules for teleportation process on item right click.</p>
+ * @see SpawnTeleportationItem
+ */
 public abstract class BaseTeleportationItem extends Item {
 
+    /**
+     * Common constructor inherit super class
+     * @param properties item's properties.
+     */
     public BaseTeleportationItem(Properties properties) {
         super(properties);
     }
 
+    /**
+     * <p>Method do actions after player's right click.</p>
+     * @param worldIn world instance
+     * @param playerIn player's entity
+     * @param handIn player's hand
+     * @return Only server side instance.
+     * <p>The player teleports to portal point, if all conditions are met.</p>
+     */
     @Override
     public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn) {
         if (worldIn.isRemote()) {
@@ -53,6 +71,12 @@ public abstract class BaseTeleportationItem extends Item {
         return new ActionResult<>(ActionResultType.SUCCESS, stack);
     }
 
+    /**
+     * Get {@link DimensionBlockPos} teleport target.
+     * @param player player entity.
+     * @return Target position in {@link DimensionBlockPos} format.
+     * @throws MinecraftTextFormattedException if position is unavailable.
+     */
     @Nonnull
     abstract DimensionBlockPos getPortalPoint(PlayerEntity player) throws MinecraftTextFormattedException;
 }

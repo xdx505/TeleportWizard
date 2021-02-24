@@ -7,17 +7,30 @@ import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.world.World;
 
+/**
+ * <p>Class defines actions to be taken after teleport delay.</p>
+ * <p>After successful delay player can be teleported to the target point</p>
+ */
 public class TeleportRunner implements Runnable {
     private final PlayerEntity playerIn;
     private final DimensionBlockPos position;
     private final World worldIn;
 
+    /**
+     * Class constructor.
+     * @param playerIn player's entity.
+     * @param position target position.
+     * @param worldIn world.
+     */
     public TeleportRunner(PlayerEntity playerIn, DimensionBlockPos position, World worldIn) {
         this.playerIn = playerIn;
         this.position = position;
         this.worldIn = worldIn;
     }
 
+    /**
+     * Teleport player to target point and play enderman teleport sound.
+     */
     @Override
     public void run() {
             playerIn.teleportKeepLoaded(position.getX(), position.getY(), position.getZ());

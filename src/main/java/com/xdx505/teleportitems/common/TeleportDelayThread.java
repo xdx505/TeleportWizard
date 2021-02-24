@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 
 public class TeleportDelayThread extends Thread {
     final private Runnable onTeleport;
-    final private int delaySec = TeleportItemsConfig.teleportDelay.get();
+    final private int delaySec = TeleportItemsConfig.getTeleportDelay().get();
     final private PlayerEntity entityPlayer;
     final private BlockPos initPos;
     final private float initHp;

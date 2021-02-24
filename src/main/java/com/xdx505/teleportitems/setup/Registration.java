@@ -7,11 +7,17 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
+/**
+ * Class which register all items, blocks and other.
+ */
 public class Registration {
+    /**
+     * Register items,
+     */
     public static void registerAll() {
-        final DeferredRegister<Item> items = DeferredRegister.create(ForgeRegistries.ITEMS, TeleportItems.MODID);
+        final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        final DeferredRegister<Item> items = DeferredRegister.create(ForgeRegistries.ITEMS, TeleportItems.MODID);
         items.register(modEventBus);
 
         ModItems.registerItems(items);
