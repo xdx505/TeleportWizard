@@ -1,4 +1,4 @@
-package com.xdx505.teleportitems.utils;
+package com.xdx505.teleportitems.common.models;
 
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.DimensionType;

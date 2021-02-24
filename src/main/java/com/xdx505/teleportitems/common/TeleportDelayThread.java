@@ -1,8 +1,7 @@
-package com.xdx505.teleportitems.items.teleportation;
+package com.xdx505.teleportitems.common;
 
 import com.xdx505.teleportitems.TeleportItems;
-import com.xdx505.teleportitems.setup.Registration;
-import com.xdx505.teleportitems.storage.models.TeleportItemsConfig;
+import com.xdx505.teleportitems.storage.config.TeleportItemsConfig;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.Util;
 import net.minecraft.util.math.BlockPos;

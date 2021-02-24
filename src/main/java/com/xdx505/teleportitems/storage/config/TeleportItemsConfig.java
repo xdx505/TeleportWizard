@@ -1,4 +1,4 @@
-package com.xdx505.teleportitems.storage.models;
+package com.xdx505.teleportitems.storage.config;
 
 import net.minecraftforge.common.ForgeConfigSpec;
 

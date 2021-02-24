@@ -1,4 +1,4 @@
-package com.xdx505.teleportitems.items.teleportation;
+package com.xdx505.teleportitems.items;
 
 import com.xdx505.teleportitems.exceptions.MinecraftTextFormattedException;
 import com.xdx505.teleportitems.common.models.DimensionBlockPos;
@@ -12,7 +12,7 @@ import net.minecraftforge.server.command.TextComponentHelper;
 
 import javax.annotation.Nonnull;
 
-import static com.xdx505.teleportitems.utils.TeleportUtils.teleport;
+import static com.xdx505.teleportitems.common.TeleportUtils.teleport;
 
 public abstract class BaseTeleportationItem extends Item {
 
@@ -49,11 +49,6 @@ public abstract class BaseTeleportationItem extends Item {
         }
 
         teleport(worldIn, playerIn, stack, portalPoint);
-
-        final SoundEvent eventEnder = SoundEvents.ENTITY_ENDERMAN_TELEPORT;
-        if (eventEnder != null) {
-            worldIn.playSound(null, playerIn.getPosX(), playerIn.getPosY(), playerIn.getPosZ(), eventEnder, SoundCategory.BLOCKS, 1.0f, 1.0f);
-        }
 
         return new ActionResult<>(ActionResultType.SUCCESS, stack);
     }

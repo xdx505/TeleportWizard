@@ -1,12 +1,10 @@
-package com.xdx505.teleportitems.items.teleportation;
+package com.xdx505.teleportitems.items;
 
-import com.xdx505.teleportitems.exceptions.MinecraftTextFormattedException;
 import com.xdx505.teleportitems.common.models.DimensionBlockPos;
+import com.xdx505.teleportitems.exceptions.MinecraftTextFormattedException;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.Hand;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.DimensionType;
@@ -35,10 +33,5 @@ public class SpawnTeleportationItem extends BaseTeleportationItem {
         int spawnZ = player.world.getWorldInfo().getSpawnZ();
 
         return new DimensionBlockPos(dimension, spawnX, spawnY, spawnZ);
-    }
-
-    @Override
-    public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn) {
-        return super.onItemRightClick(worldIn, playerIn, handIn);
     }
 }
