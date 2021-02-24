@@ -1,0 +1,10 @@
+*.log
+
+.idea
+.gradle
+run
+build
+logs
+src/generated
+src/test
+out
